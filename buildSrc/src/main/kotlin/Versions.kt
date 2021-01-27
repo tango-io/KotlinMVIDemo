@@ -8,4 +8,12 @@ object Versions {
 
     const val android_junit = "1.1.2"
     const val android_espresso = "3.3.0"
+
+    const val glide_version = "4.11.0"
+
+    const val retrofit = "2.9.0"
+
+    val kotlin_coroutines = "1.3.9"
+
+    val moshi_version = "1.9.3"
 }
