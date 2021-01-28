@@ -6,6 +6,8 @@ object Dependencies {
     val androidx_core = "androidx.core:core-ktx:${Versions.androidx_core}"
     val androidx_compat = "androidx.appcompat:appcompat:${Versions.androidx_compat}"
     val google_material = "com.google.android.material:material:${Versions.google_material}"
+    val coordinator_layout = "androidx.coordinatorlayout:coordinatorlayout:${Versions.coordinator_layout}"
+    val material = "com.google.android.material:material:{$Versions.material}"
 
     val glide = "com.github.bumptech.glide:glide:${Versions.glide_version}"
     val glide_compiler = "com.github.bumptech.glide:compiler:${Versions.glide_version}"

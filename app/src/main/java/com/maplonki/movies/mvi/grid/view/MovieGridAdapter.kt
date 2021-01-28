@@ -10,7 +10,8 @@ import com.maplonki.movies.mvi.extensions.loadImage
 import com.maplonki.movies.mvi.model.MovieModel
 import com.maplonki.movies.mvi.util.Constants
 
-class MovieGridAdapter : RecyclerView.Adapter<MovieGridAdapter.ViewHolder>() {
+class MovieGridAdapter(val movieSelected: (MovieModel) -> Unit) :
+    RecyclerView.Adapter<MovieGridAdapter.ViewHolder>() {
 
     var movieList: List<MovieModel> = listOf()
         set(value) {
@@ -33,6 +34,9 @@ class MovieGridAdapter : RecyclerView.Adapter<MovieGridAdapter.ViewHolder>() {
         fun bind(movie: MovieModel) {
             val imageUrl = Constants.BASE_IMAGE_URL + movie.coverImage
             itemView.findViewById<ImageView>(R.id.cell_movie_image).loadImage(imageUrl)
+            itemView.setOnClickListener {
+                movieSelected.invoke(movieList[adapterPosition])
+            }
         }
     }
 

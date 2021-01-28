@@ -4,6 +4,9 @@ object Versions {
     const val androidx_core = "1.3.2"
     const val androidx_compat = "1.2.0"
     const val google_material = "1.2.1"
+    const val coordinator_layout = "1.1.0"
+    const val material = "1.2.1"
+
     const val junit = "4.13.1"
 
     const val android_junit = "1.1.2"

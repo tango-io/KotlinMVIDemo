@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.maplonki.movies.mvi.R
+import com.maplonki.movies.mvi.detail.view.MovieDetailFragment
 import com.maplonki.movies.mvi.grid.MovieGridViewModel
 import com.maplonki.movies.mvi.grid.state.GridStateEvent
 
@@ -15,7 +16,20 @@ class MovieGridFragment : Fragment(R.layout.fragment_movie_grid) {
 
     private lateinit var viewModel: MovieGridViewModel
 
-    val gridAdapter: MovieGridAdapter by lazy { MovieGridAdapter() }
+    val gridAdapter: MovieGridAdapter by lazy {
+        MovieGridAdapter { selectedMovie ->
+
+            requireActivity()
+                .supportFragmentManager
+                .beginTransaction()
+                .add(
+                    R.id.activity_container,
+                    MovieDetailFragment.newInstance(selectedMovie.id ?: 0L)
+                )
+                .addToBackStack(null)
+                .commit()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

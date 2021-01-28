@@ -62,10 +62,12 @@ dependencies {
 
     implementation(Dependencies.moshi)
     implementation(Dependencies.moshi_adapter)
+    implementation(Dependencies.coordinator_layout)
+    implementation(Dependencies.material)
+
     kapt(Dependencies.moshi_codegen)
 
     implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("com.google.android.material:material:1.2.1")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
     implementation("androidx.constraintlayout:constraintlayout:2.0.4")
 
